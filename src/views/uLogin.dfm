@@ -2,8 +2,8 @@ object FormLogin: TFormLogin
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 759
-  ClientWidth = 913
+  ClientHeight = 714
+  ClientWidth = 906
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

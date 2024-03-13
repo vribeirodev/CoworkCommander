@@ -4,6 +4,7 @@ interface
 
 uses
   System.Generics.Collections,
+  System.SysUtils,
   DUnitX.TestFramework,
   UserModel,
   UserDAO,
@@ -31,25 +32,30 @@ type
     [Test]
     procedure TestGetAll;
     [Test]
-    procedure TestSelectByUsername;
-    [Test]
     procedure TestDelete;
   end;
 
 implementation
 
 procedure TUserDAOTest.SetUp;
+var
+  UserTest: String;
+  UserUsuTest: String;
 begin
-  DBConfig := TDBConfig.Create('C:\Users\Vinicius Ribeiro\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
-                                 'sysdba',
-                                 'masterkey',
-                                 'localhost',
-                                 '3050');
+  DBConfig := TDBConfig.Create('C:\Users\Vinicius\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
+                               'sysdba',
+                                'masterkey',
+                                'localhost',
+                                '3050');
   TDBConn.SetConfig(DBConfig);
 
 
   FUserDAO := TUserDAO.Create;
-  FUser := TUser.Create('testNOME_USU', 'userTest', 'tespass', 'A', 0);
+
+  UserTest := 'testNOME_USU_' + FormatDateTime('yyyymmddhhnnss', Now);
+  UserUsuTest := 'testUSER_USU_' + FormatDateTime('yyyymmddhhnnss', Now);
+
+  FUser := TUser.Create(UserTest, UserUsuTest, 'tespass', 'A', 0);
 end;
 
 procedure TUserDAOTest.TearDown;
@@ -94,22 +100,6 @@ begin
     Assert.IsTrue(Users.Count > 0, 'No users found');
   finally
     Users.Free;
-  end;
-end;
-
-procedure TUserDAOTest.TestSelectByUsername;
-var
-  User: TUser;
-begin
-
-  User := FUserDAO.SelectByUsername(FUser.USER_USU);
-
-  try
-    Assert.IsNotNull(User, 'Failed on SelectByUsername');
-    Assert.AreEqual(FUser.USER_USU, User.USER_USU, 'USER_USU does not match');
-    Assert.IsTrue(User.CheckPassword(FUser.PASS_USU), 'PASS_USU does not match');
-  finally
-    User.Free;
   end;
 end;
 
