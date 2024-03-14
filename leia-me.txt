@@ -1,4 +1,0 @@
-Acesso padrão:
-
-Login: adm
-senha: masterkey
