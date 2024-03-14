@@ -17,7 +17,10 @@ uses
   UserDAOTest in 'tests\UserDAOTest.pas',
   UserValidatorTest in 'tests\UserValidatorTest.pas',
   SecurityTests in 'tests\SecurityTests.pas',
-  UserControllerTests in 'tests\UserControllerTests.pas';
+  UserControllerTests in 'tests\UserControllerTests.pas',
+  MembroModelTests in 'tests\MembroModelTests.pas',
+  TipoEquipModelTests in 'tests\TipoEquipModelTests.pas',
+  EquipamentoModelTests in 'tests\EquipamentoModelTests.pas';
 
 {$IFNDEF TESTINSIGHT}
 var

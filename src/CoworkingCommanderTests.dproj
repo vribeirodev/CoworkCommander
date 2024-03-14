@@ -96,6 +96,9 @@
         <DCCReference Include="tests\UserValidatorTest.pas"/>
         <DCCReference Include="tests\SecurityTests.pas"/>
         <DCCReference Include="tests\UserControllerTests.pas"/>
+        <DCCReference Include="tests\MembroModelTests.pas"/>
+        <DCCReference Include="tests\TipoEquipModelTests.pas"/>
+        <DCCReference Include="tests\EquipamentoModelTests.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

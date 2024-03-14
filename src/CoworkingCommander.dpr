@@ -24,7 +24,10 @@ uses
   UserFactoryIntf in 'services\UserFactoryIntf.pas',
   UserFactory in 'services\UserFactory.pas',
   uFormPrincipal in 'uFormPrincipal.pas' {FormPrincipal},
-  uUser in 'views\uUser.pas' {FormUser};
+  uUser in 'views\uUser.pas' {FormUser},
+  MembroModel in 'models\MembroModel.pas',
+  TipoEquipModel in 'models\TipoEquipModel.pas',
+  EquipamentoModel in 'models\EquipamentoModel.pas';
 
 {$R *.res}
 

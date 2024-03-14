@@ -136,6 +136,9 @@
             <Form>FormUser</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="models\MembroModel.pas"/>
+        <DCCReference Include="models\TipoEquipModel.pas"/>
+        <DCCReference Include="models\EquipamentoModel.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -162,7 +165,7 @@
                 </Source>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="..\..\CostCenterManager\bin\CoworkingCommander.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\bin\CoworkingCommander.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>CoworkingCommander.exe</RemoteName>
                         <Overwrite>true</Overwrite>
