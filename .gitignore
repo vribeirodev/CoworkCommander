@@ -20,3 +20,6 @@
 /validators/__recovery
 /views/__history
 /views/__recovery
+*.local
+*.~*~
+*.identcache
