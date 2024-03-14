@@ -139,6 +139,10 @@
         <DCCReference Include="models\MembroModel.pas"/>
         <DCCReference Include="models\TipoEquipModel.pas"/>
         <DCCReference Include="models\EquipamentoModel.pas"/>
+        <DCCReference Include="models\TipoEspacoModel.pas"/>
+        <DCCReference Include="models\EspacoModel.pas"/>
+        <DCCReference Include="models\ManutencaoModel.pas"/>
+        <DCCReference Include="models\ReservaModel.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

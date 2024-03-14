@@ -27,7 +27,11 @@ uses
   uUser in 'views\uUser.pas' {FormUser},
   MembroModel in 'models\MembroModel.pas',
   TipoEquipModel in 'models\TipoEquipModel.pas',
-  EquipamentoModel in 'models\EquipamentoModel.pas';
+  EquipamentoModel in 'models\EquipamentoModel.pas',
+  TipoEspacoModel in 'models\TipoEspacoModel.pas',
+  EspacoModel in 'models\EspacoModel.pas',
+  ManutencaoModel in 'models\ManutencaoModel.pas',
+  ReservaModel in 'models\ReservaModel.pas';
 
 {$R *.res}
 
