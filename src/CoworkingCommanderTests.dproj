@@ -99,6 +99,17 @@
         <DCCReference Include="tests\MembroModelTests.pas"/>
         <DCCReference Include="tests\TipoEquipModelTests.pas"/>
         <DCCReference Include="tests\EquipamentoModelTests.pas"/>
+        <DCCReference Include="tests\TipoEspacoModelTests.pas"/>
+        <DCCReference Include="tests\EspacoModelTests.pas"/>
+        <DCCReference Include="tests\ManutencaoModelTests.pas"/>
+        <DCCReference Include="tests\ReservaModelTests.pas"/>
+        <DCCReference Include="tests\MembroDAOTest.pas"/>
+        <DCCReference Include="tests\TipoEquipDAOTest.pas"/>
+        <DCCReference Include="tests\TipoEspacoDAOTest.pas"/>
+        <DCCReference Include="tests\EspacoDAOTest.pas"/>
+        <DCCReference Include="tests\EquipamentoDAOTest.pas"/>
+        <DCCReference Include="tests\ReservaDAOTest.pas"/>
+        <DCCReference Include="tests\ManutencaoDAOTest.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -20,7 +20,18 @@ uses
   UserControllerTests in 'tests\UserControllerTests.pas',
   MembroModelTests in 'tests\MembroModelTests.pas',
   TipoEquipModelTests in 'tests\TipoEquipModelTests.pas',
-  EquipamentoModelTests in 'tests\EquipamentoModelTests.pas';
+  EquipamentoModelTests in 'tests\EquipamentoModelTests.pas',
+  TipoEspacoModelTests in 'tests\TipoEspacoModelTests.pas',
+  EspacoModelTests in 'tests\EspacoModelTests.pas',
+  ManutencaoModelTests in 'tests\ManutencaoModelTests.pas',
+  ReservaModelTests in 'tests\ReservaModelTests.pas',
+  MembroDAOTest in 'tests\MembroDAOTest.pas',
+  TipoEquipDAOTest in 'tests\TipoEquipDAOTest.pas',
+  TipoEspacoDAOTest in 'tests\TipoEspacoDAOTest.pas',
+  EspacoDAOTest in 'tests\EspacoDAOTest.pas',
+  EquipamentoDAOTest in 'tests\EquipamentoDAOTest.pas',
+  ReservaDAOTest in 'tests\ReservaDAOTest.pas',
+  ManutencaoDAOTest in 'tests\ManutencaoDAOTest.pas';
 
 {$IFNDEF TESTINSIGHT}
 var

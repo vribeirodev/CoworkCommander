@@ -3,7 +3,7 @@ unit EspacoModel;
 interface
 
 uses
-  System.SysUtils;
+  System.SysUtils, TipoEspacoModel;
 
 type
   EEspacoException = class(Exception);
@@ -16,7 +16,7 @@ type
     FDinsert: TDateTime;
     FDmanut: TDateTime;
     FStatus: Char;
-    FTipoEsp: Integer;
+    FTipoEsp: TTipoEspaco;
     procedure SetDescEsp(const Value: string);
   public
     constructor Create; virtual;
@@ -30,7 +30,7 @@ type
     property Dinsert: TDateTime read FDinsert write FDinsert;
     property Dmanut: TDateTime read FDmanut write FDmanut;
     property Status: Char read FStatus write FStatus;
-    property TipoEsp: Integer read FTipoEsp write FTipoEsp;
+    property TipoEsp: TTipoEspaco read FTipoEsp write FTipoEsp;
   end;
 
 implementation

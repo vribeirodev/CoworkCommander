@@ -143,6 +143,13 @@
         <DCCReference Include="models\EspacoModel.pas"/>
         <DCCReference Include="models\ManutencaoModel.pas"/>
         <DCCReference Include="models\ReservaModel.pas"/>
+        <DCCReference Include="dao\MembroDAO.pas"/>
+        <DCCReference Include="dao\TipoEquipDAO.pas"/>
+        <DCCReference Include="dao\EquipamentoDAO.pas"/>
+        <DCCReference Include="dao\EspacoDAO.pas"/>
+        <DCCReference Include="dao\TipoEspacoDAO.pas"/>
+        <DCCReference Include="dao\ReservaDAO.pas"/>
+        <DCCReference Include="dao\ManutencaoDAO.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

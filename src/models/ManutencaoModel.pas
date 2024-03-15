@@ -3,7 +3,7 @@ unit ManutencaoModel;
 interface
 
 uses
-  System.SysUtils;
+  System.SysUtils, EspacoModel;
 
 type
   EManutencaoException = class(Exception);
@@ -17,7 +17,7 @@ type
     FDinsert: TDateTime;
     FDmanut: TDateTime;
     FStatus: Char;
-    FEspaManut: Integer;
+    FEspaManut: TEspaco;
     procedure SetDescManut(const Value: string);
   public
     constructor Create; virtual;
@@ -32,7 +32,7 @@ type
     property Dinsert: TDateTime read FDinsert write FDinsert;
     property Dmanut: TDateTime read FDmanut write FDmanut;
     property Status: Char read FStatus write FStatus;
-    property EspaManut: Integer read FEspaManut write FEspaManut;
+    property EspaManut: TEspaco read FEspaManut write FEspaManut;
   end;
 
 implementation

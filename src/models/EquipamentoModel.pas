@@ -4,7 +4,8 @@ interface
 
 uses
   System.SysUtils,
-  TipoEquipModel; // Assume que esta é a unit onde TTipoEquip está definida
+  TipoEquipModel,
+  EspacoModel;
 
 type
   EEquipamentoException = class(Exception);
@@ -17,8 +18,8 @@ type
     FDinsert: TDateTime;
     FDmanut: TDateTime;
     FStatus: Char;
-    FTipoEquip: TTipoEquip; // Agora usando a classe TTipoEquip
-    FEspaEquip: Integer; // Assumindo que ainda não temos uma classe para espaços de equipamento
+    FTipoEquip: TTipoEquip;
+    FEspaEquip: TEspaco;
     procedure SetDescEquip(const Value: string);
   public
     constructor Create; virtual;
@@ -33,7 +34,7 @@ type
     property Dmanut: TDateTime read FDmanut write FDmanut;
     property Status: Char read FStatus write FStatus;
     property TipoEquip: TTipoEquip read FTipoEquip write FTipoEquip; // Propriedade atualizada
-    property EspaEquip: Integer read FEspaEquip write FEspaEquip;
+    property EspaEquip: TEspaco read FEspaEquip write FEspaEquip;
   end;
 
 implementation
