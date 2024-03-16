@@ -130,11 +130,9 @@
         <DCCReference Include="services\UserFactory.pas"/>
         <DCCReference Include="uFormPrincipal.pas">
             <Form>FormPrincipal</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="views\uUser.pas">
             <Form>FormUser</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="models\MembroModel.pas"/>
         <DCCReference Include="models\TipoEquipModel.pas"/>
@@ -150,6 +148,12 @@
         <DCCReference Include="dao\TipoEspacoDAO.pas"/>
         <DCCReference Include="dao\ReservaDAO.pas"/>
         <DCCReference Include="dao\ManutencaoDAO.pas"/>
+        <DCCReference Include="controllers\TipoEquipController.pas"/>
+        <DCCReference Include="controllers\TipoEspacoController.pas"/>
+        <DCCReference Include="controllers\EspacoController.pas"/>
+        <DCCReference Include="controllers\EquipamentoController.pas"/>
+        <DCCReference Include="controllers\MembroController.pas"/>
+        <DCCReference Include="controllers\ManutencaoController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -1,3 +1,4 @@
+
 program CoworkingCommanderTests;
 
 {$IFNDEF TESTINSIGHT}
@@ -31,7 +32,14 @@ uses
   EspacoDAOTest in 'tests\EspacoDAOTest.pas',
   EquipamentoDAOTest in 'tests\EquipamentoDAOTest.pas',
   ReservaDAOTest in 'tests\ReservaDAOTest.pas',
-  ManutencaoDAOTest in 'tests\ManutencaoDAOTest.pas';
+  ManutencaoDAOTest in 'tests\ManutencaoDAOTest.pas',
+  TipoEquipControllerTest in 'tests\TipoEquipControllerTest.pas',
+  TipoEspacoControllerTest in 'tests\TipoEspacoControllerTest.pas',
+  EspacoControllerTest in 'tests\EspacoControllerTest.pas',
+  EquipamentoControllerTest in 'tests\EquipamentoControllerTest.pas',
+  MembroControllerTest in 'tests\MembroControllerTest.pas',
+  ManutencaoControllerTest in 'tests\ManutencaoControllerTest.pas',
+  ReservaControllerTest in 'tests\ReservaControllerTest.pas';
 
 {$IFNDEF TESTINSIGHT}
 var

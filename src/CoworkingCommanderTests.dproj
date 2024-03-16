@@ -110,6 +110,13 @@
         <DCCReference Include="tests\EquipamentoDAOTest.pas"/>
         <DCCReference Include="tests\ReservaDAOTest.pas"/>
         <DCCReference Include="tests\ManutencaoDAOTest.pas"/>
+        <DCCReference Include="tests\TipoEquipControllerTest.pas"/>
+        <DCCReference Include="tests\TipoEspacoControllerTest.pas"/>
+        <DCCReference Include="tests\EspacoControllerTest.pas"/>
+        <DCCReference Include="tests\EquipamentoControllerTest.pas"/>
+        <DCCReference Include="tests\MembroControllerTest.pas"/>
+        <DCCReference Include="tests\ManutencaoControllerTest.pas"/>
+        <DCCReference Include="tests\ReservaControllerTest.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

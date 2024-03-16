@@ -8,8 +8,6 @@ uses
   uLogin in 'views\uLogin.pas' {FormLogin},
   uLayout in 'views\uLayout.pas' {FormLayout},
   uDBConfig in 'views\uDBConfig.pas' {FormDBConfig},
-  {$R}
-  {$R}
   DBConfig in 'services\DBConfig.pas' {$R *.res},
   DBConfigController in 'controllers\DBConfigController.pas',
   DBConfigFileHandler in 'services\DBConfigFileHandler.pas',
@@ -40,7 +38,13 @@ uses
   EspacoDAO in 'dao\EspacoDAO.pas',
   TipoEspacoDAO in 'dao\TipoEspacoDAO.pas',
   ReservaDAO in 'dao\ReservaDAO.pas',
-  ManutencaoDAO in 'dao\ManutencaoDAO.pas';
+  ManutencaoDAO in 'dao\ManutencaoDAO.pas',
+  TipoEquipController in 'controllers\TipoEquipController.pas',
+  TipoEspacoController in 'controllers\TipoEspacoController.pas',
+  EspacoController in 'controllers\EspacoController.pas',
+  EquipamentoController in 'controllers\EquipamentoController.pas',
+  MembroController in 'controllers\MembroController.pas',
+  ManutencaoController in 'controllers\ManutencaoController.pas';
 
 {$R *.res}
 
