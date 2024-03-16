@@ -154,6 +154,7 @@
         <DCCReference Include="controllers\EquipamentoController.pas"/>
         <DCCReference Include="controllers\MembroController.pas"/>
         <DCCReference Include="controllers\ManutencaoController.pas"/>
+        <DCCReference Include="controllers\ReservaController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

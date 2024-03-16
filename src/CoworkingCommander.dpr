@@ -44,7 +44,8 @@ uses
   EspacoController in 'controllers\EspacoController.pas',
   EquipamentoController in 'controllers\EquipamentoController.pas',
   MembroController in 'controllers\MembroController.pas',
-  ManutencaoController in 'controllers\ManutencaoController.pas';
+  ManutencaoController in 'controllers\ManutencaoController.pas',
+  ReservaController in 'controllers\ReservaController.pas';
 
 {$R *.res}
 
