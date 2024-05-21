@@ -18,6 +18,8 @@ type
     function DeleteEspaco(Espaco: TEspaco): Boolean;
     function GetEspaco(CodiEsp: Integer): TEspaco;
     function GetAllEspaco: TObjectList<TEspaco>;
+    function GetAvailableEspacos(StartDateTime, EndDateTime: TDateTime): TObjectList<TEspaco>;
+    function IsEspacoAvailable(CodiEsp, ExcludingReservaID: Integer; StartDateTime, EndDateTime: TDateTime): Boolean;
   end;
 
 implementation
@@ -61,5 +63,18 @@ function TEspacoController.GetAllEspaco: TObjectList<TEspaco>;
 begin
   Result := FDao.GetAll;
 end;
+
+function TEspacoController.GetAvailableEspacos(StartDateTime, EndDateTime: TDateTime): TObjectList<TEspaco>;
+begin
+  Result := FDao.GetAvailableEspacos(StartDateTime, EndDateTime);
+end;
+
+
+function TEspacoController.IsEspacoAvailable(CodiEsp, ExcludingReservaID: Integer; StartDateTime, EndDateTime: TDateTime): Boolean;
+begin
+  Result := FDao.IsEspacoAvailable(CodiEsp, ExcludingReservaID, StartDateTime, EndDateTime);
+end;
+
+
 
 end.

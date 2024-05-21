@@ -24,6 +24,8 @@ type
     function Delete(Espaco: TEspaco): Boolean;
     function Select(CodiEsp: Integer): TEspaco;
     function GetAll: TObjectList<TEspaco>;
+    function GetAvailableEspacos(StartDateTime, EndDateTime: TDateTime): TObjectList<TEspaco>;
+    function IsEspacoAvailable(CodiEsp, ExcludingReservaID: Integer; StartDateTime, EndDateTime: TDateTime): Boolean;
   end;
 
 implementation
@@ -167,10 +169,10 @@ begin
   try
     Result.CodiEsp := Query.FieldByName('CODI_ESP').AsInteger;
     Result.DescEsp := Query.FieldByName('DESC_ESP').AsString;
-    Result.StatEsp := Query.FieldByName('STAT_ESP').AsString[1];
+    Result.StatEsp := Query.FieldByName('STAT_ESP').AsString;
     Result.Dinsert := Query.FieldByName('DINSERT').AsDateTime;
     Result.Dmanut := Query.FieldByName('DMANUT').AsDateTime;
-    Result.Status := Query.FieldByName('STATUS').AsString[1];
+    Result.Status := Query.FieldByName('STATUS').AsString;
 
     // Carregar TipoEsp associado
     TipoEspacoDAO := TTipoEspacoDAO.Create;
@@ -184,6 +186,54 @@ begin
     raise;
   end;
 end;
+
+function TEspacoDAO.GetAvailableEspacos(StartDateTime, EndDateTime: TDateTime): TObjectList<TEspaco>;
+var
+  Query: TFDQuery;
+  Espacos: TObjectList<TEspaco>;
+begin
+  Espacos := TObjectList<TEspaco>.Create;
+  Query := TFDQueryFactory.CreateQuery;
+  try
+    Query.SQL.Text := 'SELECT e.* FROM CADESP e WHERE e.STATUS = ''A'' AND NOT EXISTS (' +
+                      'SELECT 1 FROM CABRESERVA r WHERE r.ESPA_RES = e.CODI_ESP ' +
+                      'AND r.STATUS = ''A'' AND (' +
+                      '(r.DINICIO_RES < :EndDateTime AND r.DFIM_RES > :StartDateTime)))';
+    Query.ParamByName('StartDateTime').AsDateTime := StartDateTime;
+    Query.ParamByName('EndDateTime').AsDateTime := EndDateTime;
+    Query.Open;
+    while not Query.Eof do
+    begin
+      Espacos.Add(EspacoFromQuery(Query));
+      Query.Next;
+    end;
+  finally
+    Query.Free;
+  end;
+  Result := Espacos;
+end;
+
+function TEspacoDAO.IsEspacoAvailable(CodiEsp, ExcludingReservaID: Integer; StartDateTime, EndDateTime: TDateTime): Boolean;
+var
+  Query: TFDQuery;
+begin
+  Query := TFDQueryFactory.CreateQuery;
+  try
+    Query.SQL.Text := 'SELECT COUNT(*) FROM CABRESERVA ' +
+                      'WHERE ESPA_RES = :CodiEsp AND CODI_RES <> :ExcludingReservaID ' +
+                      'AND STATUS = ''A'' AND NOT (DFIM_RES <= :StartDateTime OR DINICIO_RES >= :EndDateTime)';
+    Query.ParamByName('CodiEsp').AsInteger := CodiEsp;
+    Query.ParamByName('ExcludingReservaID').AsInteger := ExcludingReservaID;
+    Query.ParamByName('StartDateTime').AsDateTime := StartDateTime;
+    Query.ParamByName('EndDateTime').AsDateTime := EndDateTime;
+    Query.Open;
+
+    Result := Query.Fields[0].AsInteger = 0;
+  finally
+    Query.Free;
+  end;
+end;
+
 
 end.
 

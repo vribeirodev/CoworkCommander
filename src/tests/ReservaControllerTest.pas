@@ -21,6 +21,7 @@ type
     function CreateTestEspaco: TEspaco;
     function CreateTestMembro: TMembro;
     function CreateTestReserva(Espaco: TEspaco; Membro: TMembro): TReserva;
+    function GerarCPF: String;
   public
     [Setup]
     procedure SetUp;
@@ -43,7 +44,7 @@ implementation
 
 procedure TReservaControllerTest.SetUp;
 begin
-  DBConfig := TDBConfig.Create('C:\Users\Vinicius\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
+  DBConfig := TDBConfig.Create('C:\Users\Vinicius Ribeiro\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
                                'sysdba',
                                 'masterkey',
                                 'localhost',
@@ -60,6 +61,46 @@ procedure TReservaControllerTest.TearDown;
 begin
 
 end;
+
+function TReservaControllerTest.GerarCPF: string;
+var
+  i, j, soma, resto, digito1, digito2: Integer;
+  cpfParcial: string;
+  cpfArray: array[1..9] of Integer;
+begin
+  Randomize;
+  for i := 1 to 9 do
+    cpfArray[i] := Random(10);
+
+  soma := 0;
+  for i := 1 to 9 do
+    soma := soma + (cpfArray[i] * (11 - i));
+
+  resto := soma mod 11;
+  if (resto = 0) or (resto = 1) then
+    digito1 := 0
+  else
+    digito1 := 11 - resto;
+
+  cpfParcial := '';
+  for i := 1 to 9 do
+    cpfParcial := cpfParcial + IntToStr(cpfArray[i]);
+
+  cpfParcial := cpfParcial + IntToStr(digito1);
+
+  soma := 0;
+  for i := 1 to 10 do
+    soma := soma + (StrToInt(cpfParcial[i]) * (12 - i));
+
+  resto := soma mod 11;
+  if (resto = 0) or (resto = 1) then
+    digito2 := 0
+  else
+    digito2 := 11 - resto;
+
+  Result := cpfParcial + IntToStr(digito2);
+end;
+
 
 function TReservaControllerTest.CreateTestEspaco: TEspaco;
 var
@@ -80,10 +121,11 @@ end;
 
 function TReservaControllerTest.CreateTestMembro: TMembro;
 var
-  uniquePart, cpfBase: String;
+  uniquePart1, uniquePart2, cpfBase: String;
 begin
-  uniquePart := FormatDateTime('nnsszzz', Now); // Minutos, segundos e milissegundos
-  cpfBase := '123.456.' + Copy(uniquePart, 1, 3) + '-' + Copy(uniquePart, 4, 2); // Gerar CPF único
+  uniquePart1 := FormatDateTime('nnsszzz', Now); // Minutos, segundos e milissegundos
+  uniquePart2 := FormatDateTime('nnsszzz', Now); // Minutos, segundos e milissegundos
+  cpfBase := GerarCPF;
 
   Result := TMembro.Create;
   Result.NomeMemb := 'Membro Teste ' + FormatDateTime('yyyymmddhhnnsszzz', Now);

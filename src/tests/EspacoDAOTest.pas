@@ -46,7 +46,7 @@ implementation
 procedure TEspacoDAOTest.SetUp;
 begin
   // Configuração do banco de dados
-  DBConfig := TDBConfig.Create('C:\Users\Vinicius\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
+  DBConfig := TDBConfig.Create('C:\Users\Vinicius Ribeiro\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
                                'sysdba',
                                'masterkey',
                                'localhost',
@@ -101,15 +101,18 @@ begin
 end;
 
 procedure TEspacoDAOTest.TestUpdate;
+var
+  desc: string;
 begin
   var NewId := FEspacoDAO.Insert(FEspaco);
   FEspaco.CodiEsp := NewId;
-  FEspaco.DescEsp := 'Espaço Atualizado';
+  desc := 'Espaço Atualizado' + FormatDateTime('yyyymmddhhnnsszzz', Now);
+  FEspaco.DescEsp := desc;
   Assert.IsTrue(FEspacoDAO.Update(FEspaco));
 
   var UpdatedEspaco := FEspacoDAO.Select(NewId);
   try
-    Assert.AreEqual('Espaço Atualizado', UpdatedEspaco.DescEsp);
+    Assert.AreEqual(desc, UpdatedEspaco.DescEsp);
   finally
     UpdatedEspaco.Free;
   end;

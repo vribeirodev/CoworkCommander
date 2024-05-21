@@ -170,10 +170,10 @@ begin
     Result.CodiManut := Query.FieldByName('CODI_MANUT').AsInteger;
     Result.DescManut := Query.FieldByName('DESC_MANUT').AsString;
     Result.DataManut := Query.FieldByName('DATA_MANUT').AsDateTime;
-    Result.StatManut := Query.FieldByName('STAT_MANUT').AsString[1];
+    Result.StatManut := Query.FieldByName('STAT_MANUT').AsString;
     Result.Dinsert := Query.FieldByName('DINSERT').AsDateTime;
     Result.Dmanut := Query.FieldByName('DMANUT').AsDateTime;
-    Result.Status := Query.FieldByName('STATUS').AsString[1];
+    Result.Status := Query.FieldByName('STATUS').AsString;
 
     EspacoDAO := TEspacoDAO.Create;
     try

@@ -45,7 +45,19 @@ uses
   EquipamentoController in 'controllers\EquipamentoController.pas',
   MembroController in 'controllers\MembroController.pas',
   ManutencaoController in 'controllers\ManutencaoController.pas',
-  ReservaController in 'controllers\ReservaController.pas';
+  ReservaController in 'controllers\ReservaController.pas',
+  uMembros in 'views\uMembros.pas' {FormMembros},
+  uEspacos in 'views\uEspacos.pas' {FormEspacos},
+  uBuscaTipoEspaco in 'views\uBuscaTipoEspaco.pas' {FormBuscaTipoEspaco},
+  uManutencoes in 'views\uManutencoes.pas' {FormManutencoes},
+  uBuscaEspaco in 'views\uBuscaEspaco.pas' {FormBuscaEspaco},
+  uRecursos in 'views\uRecursos.pas' {FormRecursos},
+  uBuscaTipoRecurso in 'views\uBuscaTipoRecurso.pas' {FormBuscaTipoRecurso},
+  uBuscaMembros in 'views\uBuscaMembros.pas' {FormBuscarMembros},
+  uReservas in 'views\uReservas.pas' {FormReservas},
+  uRelatorios in 'views\uRelatorios.pas' {FormRelatorios},
+  uRelatorioMembros in 'views\uRelatorioMembros.pas' {FormRelatorioMembro},
+  uRelatorioData in 'views\uRelatorioData.pas' {FormRelatorioData};
 
 {$R *.res}
 
@@ -72,6 +84,17 @@ begin
   Application.CreateForm(TFormPrincipal, FormPrincipal);
   Application.CreateForm(TFormUser, FormUser);
   Application.CreateForm(TFormPrincipal, FormPrincipal);
+  Application.CreateForm(TFormMembros, FormMembros);
+  Application.CreateForm(TFormEspacos, FormEspacos);
+  Application.CreateForm(TFormBuscaTipoEspaco, FormBuscaTipoEspaco);
+  Application.CreateForm(TFormManutencoes, FormManutencoes);
+  Application.CreateForm(TFormBuscaEspaco, FormBuscaEspaco);
+  Application.CreateForm(TFormRecursos, FormRecursos);
+  Application.CreateForm(TFormBuscaTipoRecurso, FormBuscaTipoRecurso);
+  Application.CreateForm(TFormBuscarMembros, FormBuscarMembros);
+  Application.CreateForm(TFormReservas, FormReservas);
+  Application.CreateForm(TFormRelatorios, FormRelatorios);
+  Application.CreateForm(TFormRelatorioData, FormRelatorioData);
   Application.Run;
 end.
 

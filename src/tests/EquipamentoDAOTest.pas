@@ -43,7 +43,7 @@ implementation
 procedure TEquipamentoDAOTest.SetUp;
 begin
   // Database configuration
-  DBConfig := TDBConfig.Create('C:\Users\Vinicius\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
+  DBConfig := TDBConfig.Create('C:\Users\Vinicius Ribeiro\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
                                'sysdba',
                                'masterkey',
                                'localhost',

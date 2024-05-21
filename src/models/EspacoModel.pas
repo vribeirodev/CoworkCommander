@@ -12,10 +12,10 @@ type
   private
     FCodiEsp: Integer;
     FDescEsp: string;
-    FStatEsp: Char;
+    FStatEsp: String;
     FDinsert: TDateTime;
     FDmanut: TDateTime;
-    FStatus: Char;
+    FStatus: String;
     FTipoEsp: TTipoEspaco;
     procedure SetDescEsp(const Value: string);
   public
@@ -26,10 +26,10 @@ type
 
     property CodiEsp: Integer read FCodiEsp write FCodiEsp;
     property DescEsp: string read FDescEsp write SetDescEsp;
-    property StatEsp: Char read FStatEsp write FStatEsp;
+    property StatEsp: String read FStatEsp write FStatEsp;
     property Dinsert: TDateTime read FDinsert write FDinsert;
     property Dmanut: TDateTime read FDmanut write FDmanut;
-    property Status: Char read FStatus write FStatus;
+    property Status: String read FStatus write FStatus;
     property TipoEsp: TTipoEspaco read FTipoEsp write FTipoEsp;
   end;
 

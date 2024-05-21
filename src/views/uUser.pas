@@ -76,7 +76,7 @@ begin
   btnNovo.Caption := 'Novo';
   btnAlterar.Caption := 'Alterar';
   btnAlterar.OnClick := btnAlterarClick;
-  end;
+end;
 
 procedure TFormUser.btnNovoClick(Sender: TObject);
 var

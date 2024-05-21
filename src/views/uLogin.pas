@@ -34,6 +34,7 @@ type
     procedure btnConfigClick(Sender: TObject);
     procedure btnFecharClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
+    procedure edtSenhaKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
     procedure PositionPanel;
@@ -111,6 +112,15 @@ end;
 procedure TFormLogin.btnFecharClick(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TFormLogin.edtSenhaKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then
+  begin
+    Key := #0;
+    btnConfirmarClick(Sender);
+  end;
 end;
 
 procedure TFormLogin.FormCreate(Sender: TObject);

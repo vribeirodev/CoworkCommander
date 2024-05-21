@@ -2,8 +2,8 @@ object FormLogin: TFormLogin
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 714
-  ClientWidth = 906
+  ClientHeight = 721
+  ClientWidth = 909
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -200,6 +200,7 @@ object FormLogin: TFormLogin
         ParentFont = False
         PasswordChar = '*'
         TabOrder = 1
+        OnKeyPress = edtSenhaKeyPress
       end
     end
     object pnlConfirmar: TPanel

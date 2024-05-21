@@ -9,7 +9,8 @@ uses
   UserModel,
   UserDAO,
   DBConn,
-  DBConfig;
+  DBConfig,
+  System.Diagnostics;
 
 type
 
@@ -19,6 +20,7 @@ type
     FUserDAO: TUserDAO;
     FUser: TUser;
     DBConfig: TDBConfig;
+    FStopwatch: TStopwatch;
   public
     [Setup]
     procedure SetUp;
@@ -33,6 +35,8 @@ type
     procedure TestGetAll;
     [Test]
     procedure TestDelete;
+    [Test]
+    procedure TestInsertStress;
   end;
 
 implementation
@@ -42,7 +46,9 @@ var
   UserTest: String;
   UserUsuTest: String;
 begin
-  DBConfig := TDBConfig.Create('C:\Users\Vinicius\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
+  FStopwatch := TStopwatch.StartNew;
+
+  DBConfig := TDBConfig.Create('C:\Users\Vinicius Ribeiro\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
                                'sysdba',
                                 'masterkey',
                                 'localhost',
@@ -60,6 +66,9 @@ end;
 
 procedure TUserDAOTest.TearDown;
 begin
+  FStopwatch.Stop;
+  Writeln(Format('Teste executado em %d milissegundos', [FStopwatch.ElapsedMilliseconds]));
+
   FUserDAO.Free;
   FUser.Free;
   DBConfig.Free;
@@ -83,6 +92,29 @@ begin
     Assert.IsTrue(User.CheckPassword(FUser.PASS_USU), 'PASS_USU does not match');
   finally
     User.Free;
+  end;
+end;
+
+procedure TUserDAOTest.TestInsertStress;
+var
+  NewUserID: Integer;
+  User: TUser;
+  I: Integer;
+  sUserTest: String;
+  sUserUsuTest: String;
+  oUser: TUser;
+begin
+  // Test Insert stress
+  for I := 0 to 10000 do
+  begin
+    sUserTest := 'testNOME_USU_' + IntToStr(I) + FormatDateTime('yyyymmddhhnnss', Now);
+    sUserUsuTest := 'testUSER_USU_' + IntToStr(I) + FormatDateTime('yyyymmddhhnnss', Now);
+
+    oUser := TUser.Create(sUserTest, sUserUsuTest, 'tespass', 'A', 0);
+
+    NewUserID := FUserDAO.Insert(oUser);
+    FUser.CODI_USU := NewUserID;
+    Assert.IsTrue(NewUserID > 0, 'Failed on Insert');
   end;
 end;
 

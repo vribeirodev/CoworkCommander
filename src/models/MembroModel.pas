@@ -18,7 +18,7 @@ type
     FDnascMemb: TDate;
     FDinsert: TDateTime;
     FDmanut: TDateTime;
-    FStatus: Char;
+    FStatus: String;
   public
     constructor Create; virtual;
     destructor Destroy; override;
@@ -36,7 +36,7 @@ type
     property DnascMemb: TDate read FDnascMemb write FDnascMemb;
     property Dinsert: TDateTime read FDinsert write FDinsert;
     property Dmanut: TDateTime read FDmanut write FDmanut;
-    property Status: Char read FStatus write FStatus;
+    property Status: String read FStatus write FStatus;
   end;
 
 implementation

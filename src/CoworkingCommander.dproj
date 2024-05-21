@@ -9,6 +9,7 @@
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>CoworkingCommander.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">CoworkingCommander</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -84,8 +85,8 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <DCC_ExeOutput>C:\Users\Vinicius\Documents\Projetos\CoworkCommander\bin\</DCC_ExeOutput>
-        <DCC_DcuOutput>C:\Users\Vinicius\Documents\Projetos\CoworkCommander\dcu\</DCC_DcuOutput>
+        <DCC_ExeOutput>C:\Users\Vinicius Ribeiro\Documents\Projetos\CoworkCommander\bin\</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\Users\Vinicius Ribeiro\Documents\Projetos\CoworkCommander\dcu\</DCC_DcuOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
@@ -155,6 +156,54 @@
         <DCCReference Include="controllers\MembroController.pas"/>
         <DCCReference Include="controllers\ManutencaoController.pas"/>
         <DCCReference Include="controllers\ReservaController.pas"/>
+        <DCCReference Include="views\uMembros.pas">
+            <Form>FormMembros</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uEspacos.pas">
+            <Form>FormEspacos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uBuscaTipoEspaco.pas">
+            <Form>FormBuscaTipoEspaco</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uManutencoes.pas">
+            <Form>FormManutencoes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uBuscaEspaco.pas">
+            <Form>FormBuscaEspaco</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uRecursos.pas">
+            <Form>FormRecursos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uBuscaTipoRecurso.pas">
+            <Form>FormBuscaTipoRecurso</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uBuscaMembros.pas">
+            <Form>FormBuscarMembros</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uReservas.pas">
+            <Form>FormReservas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uRelatorios.pas">
+            <Form>FormRelatorios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uRelatorioMembros.pas">
+            <Form>FormRelatorioMembro</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="views\uRelatorioData.pas">
+            <Form>FormRelatorioData</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -847,6 +896,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1139,6 +1191,7 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

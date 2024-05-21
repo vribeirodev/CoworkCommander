@@ -2,6 +2,7 @@ inherited FormUser: TFormUser
   Caption = 'FormUser'
   ClientHeight = 519
   ClientWidth = 567
+  StyleElements = [seFont, seClient, seBorder]
   OnShow = FormShow
   ExplicitWidth = 567
   ExplicitHeight = 519
@@ -9,31 +10,37 @@ inherited FormUser: TFormUser
   inherited pnlBackground: TPanel
     Width = 567
     Height = 519
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 567
     ExplicitHeight = 519
     inherited pnlMarginRight: TPanel
       Left = 566
       Height = 517
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 566
       ExplicitHeight = 517
     end
     inherited pnlMarginBot: TPanel
       Top = 518
       Width = 567
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitTop = 518
       ExplicitWidth = 567
     end
     inherited pnlMarginLeft: TPanel
       Height = 517
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitHeight = 517
     end
     inherited pnlMargimTop: TPanel
       Width = 567
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 567
     end
     inherited pnlMain: TPanel
       Width = 565
       Height = 517
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 565
       ExplicitHeight = 517
       inherited btnClose: TSpeedButton

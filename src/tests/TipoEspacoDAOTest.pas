@@ -42,7 +42,7 @@ implementation
 procedure TTipoEspacoDAOTest.SetUp;
 begin
   // Configuração do banco de dados
-  DBConfig := TDBConfig.Create('C:\Users\Vinicius\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
+  DBConfig := TDBConfig.Create('C:\Users\Vinicius Ribeiro\Documents\Projetos\CoworkCommander\Database\CCDB.FDB',
                                'sysdba',
                                'masterkey',
                                'localhost',

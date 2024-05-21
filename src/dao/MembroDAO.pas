@@ -179,7 +179,7 @@ begin
     Result.DnascMemb := Query.FieldByName('DNASC_MEMB').AsDateTime;
     Result.Dinsert := Query.FieldByName('DINSERT').AsDateTime;
     Result.Dmanut := Query.FieldByName('DMANUT').AsDateTime;
-    Result.Status := Query.FieldByName('STATUS').AsString[1];
+    Result.Status := Query.FieldByName('STATUS').AsString;
   except
     Result.Free;
     raise;
